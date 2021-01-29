@@ -1,0 +1,40 @@
+<div class="featured-container">
+    <div class="featured-image">
+        <!-- <img src="https://occ-0-626-185.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABTwavGnRMaVpc4IguPpSCf6f3gJxlb1PPdaHGrVHukp7S-2OKD_Qhxc_ZMFZB7n1LGaSLGMw-mUiG_6hphEJcmzqdAja.webp?r=215" alt=""> -->
+        <!-- <img src="./assets/captain-america-civil-war-heroes-5k-bk.jpg" alt=""> -->
+        <img src="https://image.tmdb.org/t/p/original/{{ movieFeatured?.backdrop_path }}" class="" alt="">
+        <div class="featured-gradient"></div>
+    </div>
+    <div class="featured-description">
+        <!-- TODO: Colocar regra para titulo muito grande, aumentar width ou subir margin-top. Acima de 35 caracteres -->
+        {{ movieFeatured?.title }}
+    </div>
+</div>
+<!-- TODO: Carrega imagem e carrega o video em backlog, quando terminar de carregar o video, remove a imagem com fade e mostra o video -->
+<!-- TODO: Criar componente para lançamentos -->
+<!-- <div class="featured-popular-list container-fluid">
+    <h5>Lançamentos</h5>
+    <div class="row">
+        <div *ngFor="let movie of movies" class="popular-list-movie col-md-2">
+            <a href="/movies/{{ movie.id }}">
+                <img src="https://image.tmdb.org/t/p/original{{ movie.poster_path }}" class="" alt="">
+            </a>
+        </div>
+    </div>
+</div> -->
+<!-- Minha lista -->
+<!-- TODO: Criar componente para minha lista -->
+<!-- TODO: Renomear classes para minha lista -->
+<div class="popular-container container-fluid">
+    <h5>Filmes</h5>
+    <div class="popular-list">
+        <div class="row flex-nowrap">
+            <div *ngFor="let movie of movies" class="popular-list-movie col-md-2">
+                <a href="/movies/{{ movie.id }}">
+                    <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" class="" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="popular-control-next">></div>
+</div>

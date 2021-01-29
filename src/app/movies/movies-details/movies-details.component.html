@@ -1,0 +1,41 @@
+<div class="detail-container">
+    <div class="container-fluid">
+        <!-- TODO: Exibir loading -->
+        <!-- TODO: Exibir mensagem de erro caso nao tenha filme -->
+        <div class="row" *ngIf="movie != null">
+            <!-- TODO: Deixar uma imagem padrao (asset), para depois carregar a do filme (Evitar 404) -->
+            <img src="https://image.tmdb.org/t/p/original{{ movie.backdrop_path }}" class="" alt="">
+            <div class="detail-description col-md-5">
+                <p class="detail-description-title">{{ movie.title }}</p>
+                <!-- TODO: Colocar o mês também -->
+                <p class="detail-description-year">{{ movie.releaseDate }}</p>
+
+                <!-- TODO: Componentizar -->
+                <!-- <p class="detail-description-certification">
+                    <span class="cl">L</span>
+                    <span class="c10">10</span>
+                    <span class="c12">12</span>
+                    <span class="c14">14</span>
+                    <span class="c16">16</span>
+                    <span class="c18">18</span>
+                </p> -->
+
+                <!-- TODO: Componentizar -->
+                <p class="detail-description-genres">
+                    Gêneros: {{ movie.listGenres }}
+                </p>
+
+                <p class="detail-description-overview">
+                    {{ movie.overview }}
+                </p>
+            </div>
+            <div class="detail-video col-md-7">
+                <div *ngIf="movie.videoUrl" class="detail-video-content embed-responsive embed-responsive-21by9">
+                    <iframe [src]="movie.videoUrl | safeUrl" class="embed-responsive-item" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
